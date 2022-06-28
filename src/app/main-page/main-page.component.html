@@ -1,0 +1,51 @@
+<div class="inner-container">
+    <mat-card>
+        <mat-card-title><span>Full Name: <strong>{{fullName}}</strong></span></mat-card-title>
+        <mat-card-subtitle>Url <a target="_blank" href="{{htmlUrl}}">{{htmlUrl}}</a></mat-card-subtitle>
+        <mat-card-content>{{description}}</mat-card-content>
+    </mat-card>
+
+    <div class="floar-right">
+        <h3 style="display: inline-block;margin-right: 5px;">Pull request state </h3>
+        <mat-button-toggle-group name="pullRequestState" aria-label="Pull request state" value="open">
+            <mat-button-toggle value="open" (change)="onStateToggleChange($event.value)">Open</mat-button-toggle>
+            <mat-button-toggle value="closed" (change)="onStateToggleChange($event.value)">Closed</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>id</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{item.id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="number">
+            <mat-header-cell *matHeaderCellDef>Number</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{item.number}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{item.title}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+            <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{item.state}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-button (click)="editPullRequest(row.number)">Edit</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </table>
+    <div class="spinner-container">
+        <mat-progress-spinner mode="indeterminate" *ngIf="!isDataReady"></mat-progress-spinner>
+    </div>
+    <mat-paginator [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
+</div>

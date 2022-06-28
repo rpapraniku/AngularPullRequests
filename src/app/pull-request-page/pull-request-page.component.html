@@ -1,0 +1,23 @@
+<div class="inner-container">
+    <div>
+        <mat-list>
+            <mat-list-item> Number: <span><strong>{{ number }}</strong></span></mat-list-item>
+            <mat-list-item> Title: <span><strong>{{ title }}</strong></span></mat-list-item>
+            <mat-list-item> State: <span><strong>{{ state }}</strong></span></mat-list-item>
+            <mat-list-item> Created time: <span><strong>{{ createdTime }}</strong></span></mat-list-item>
+        </mat-list>
+    </div>
+    <div *ngFor="let item of requestViewers">
+        <mat-card class="mat-card-request-viewers">
+
+            <mat-card-header>
+                <img mat-card-avatar src="{{item.avatar_url}}" alt="{{item.avatar_url}}" />
+                <mat-card-title>{{item.login}}</mat-card-title>
+                <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p> Url: <a target="_blank" href="{{item.html_url}}">{{item.html_url}}</a> </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
