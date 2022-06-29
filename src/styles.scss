@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import "~@angular/material/prebuild-themes/indigo-pink.css";
-
 html,
 body {
     height: 100%;
@@ -19,6 +17,7 @@ table {
 .container {
     padding-left: 5%;
     padding-right: 5%;
+    min-height: 100%;
     background-color: lightgray;
 }
 
@@ -30,16 +29,41 @@ table {
     float: right;
 }
 
-.mat-card-request-viewers {
-    width: 300px;
-    margin: 5px;
-    display: inline-block;
-}
-
 .spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fafafa;
     box-shadow: 0 5px 5px -3px;
+}
+
+.navbar {
+    justify-content: space-between;
+    position: relative;
+}
+
+.mat-list-base.inline-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    width: 300px;
+    margin: 5px;
+    display: flex auto;
+    justify-content: space-between;
+}
+
+.mat-column-title {
+    min-width: 700px !important;
+}
+
+.mat-column-state {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mat-column-action {
+    display: flex;
+    justify-content: flex-end;
 }

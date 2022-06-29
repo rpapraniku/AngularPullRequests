@@ -17,6 +17,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { MatListModule } from '@angular/material/list';
     MatButtonToggleModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
   providers: [GithubApiService],
   bootstrap: [AppComponent]
