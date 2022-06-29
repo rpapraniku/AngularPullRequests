@@ -1,16 +1,16 @@
 <div class="inner-container">
-    <ul style="list-style-type:circle">
+    <ul>
         <li>
-            <label>Number:</label><span><strong>{{ number }}</strong></span>
+            Number:&nbsp;<span><strong>{{ number }}</strong></span>
         </li>
         <li>
-            <label>Title:<span><strong>{{ title }}</strong></span></label>
+            Title:&nbsp;<span><strong>{{ title }}</strong></span>
         </li>
         <li>
-            <label>State:<span><strong>{{ state }}</strong></span></label>
+            State:&nbsp;<span><strong>{{ state }}</strong></span>
         </li>
         <li>
-            <label>Created time:<span><strong>{{ createdTime }}</strong></span></label>
+            Created time:&nbsp;<span><strong>{{ createdTime }}</strong></span>
         </li>
     </ul>
     <div *ngFor="let item of requestViewers">

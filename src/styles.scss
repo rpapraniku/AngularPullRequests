@@ -67,3 +67,16 @@ table {
     display: flex;
     justify-content: flex-end;
 }
+
+li {
+    margin-bottom: 2px;
+    line-height: 2rem;
+}
+
+li:nth-child(odd) {
+    background-color: white;
+}
+
+li:nth-child(even) {
+    background-color: whitesmoke;
+}
