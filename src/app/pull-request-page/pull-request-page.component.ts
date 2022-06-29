@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IRequestViewer } from '../shared/models/requestViewer';
 import { GithubApiService } from '../shared/services/github-api.service';
 
 @Component({
@@ -9,25 +10,23 @@ import { GithubApiService } from '../shared/services/github-api.service';
 })
 export class PullRequestPageComponent implements OnInit {
 
-  pullRequest: any;
-  title: string;
+  id: string;
   number: string;
+  title: string;
   state: string;
-  createdTime: Date;
-  requestViewers: any = [];
+  created_at: string;
+  requested_reviewers: IRequestViewer[];
 
-  constructor(private activationRoute: ActivatedRoute, private githubApiService: GithubApiService) {
-  }
+  constructor(private activationRoute: ActivatedRoute, private githubApiService: GithubApiService) { }
 
   ngOnInit(): void {
     this.githubApiService.getPullRequest(this.activationRoute.snapshot.params.number).then(res => {
-      this.number = this.activationRoute.snapshot.params.number;
-      this.pullRequest = res;
+      this.id = res.id;
+      this.number = res.number;
       this.title = res.title;
       this.state = res.state;
-      this.createdTime = res.created_at;
-      this.requestViewers = res.requested_reviewers;
+      this.created_at = res.created_at;
+      this.requested_reviewers = res.requested_reviewers;
     });
   }
-
 }

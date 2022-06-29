@@ -1,13 +1,17 @@
 <div class="inner-container">
     <mat-card>
-        <mat-card-title><span>Full Name: <strong>{{fullName}}</strong></span></mat-card-title>
-        <mat-card-subtitle>Url <a target="_blank" href="{{htmlUrl}}">{{htmlUrl}}</a></mat-card-subtitle>
+        <mat-card-title>
+            <strong>{{full_name}}</strong>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <a target="_blank" href="{{html_url}}">{{html_url}}</a>
+        </mat-card-subtitle>
         <mat-card-content>{{description}}</mat-card-content>
     </mat-card>
 
     <div class="float-right">
-        <h3 style="display: inline-block;margin-right: 5px;">Pull request state </h3>
-        <mat-button-toggle-group name="pullRequestState" aria-label="Pull request state" value="open">
+        <h3 style="display: inline-block;margin-right: 5px;">Pull request state&nbsp;</h3>
+        <mat-button-toggle-group name="pullRequestState" value="open">
             <mat-button-toggle value="open" (change)="onStateToggleChange($event.value)">Open</mat-button-toggle>
             <mat-button-toggle value="closed" (change)="onStateToggleChange($event.value)">Closed</mat-button-toggle>
         </mat-button-toggle-group>

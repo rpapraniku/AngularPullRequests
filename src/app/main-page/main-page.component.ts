@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { IPullRequest } from '../shared/models/pullRequest';
 import { GithubApiService } from '../shared/services/github-api.service';
 
 @Component({
@@ -16,19 +17,20 @@ export class MainPageComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  description: string = "";
-  fullName: string = "";
-  htmlUrl: string = "";
+  full_name: string;
+  html_url: string;
+  description: string;
+
   isDataReady: boolean = false;
   pullRequestState: string = "closed";
-  dataSource = new MatTableDataSource<any>();
+  dataSource = new MatTableDataSource<IPullRequest>();
   displayedColumns = ["id", "number", "title", "state", "action"];
 
   ngOnInit(): void {
     this.githuhService.getRepo().then(res => {
+      this.full_name = res.full_name;
+      this.html_url = res.html_url;
       this.description = res.description;
-      this.fullName = res.full_name;
-      this.htmlUrl = res.html_url;
     });
 
     this.githuhService.getAllPullRequests("open").then(res => {

@@ -1,19 +1,16 @@
 <div class="inner-container">
-    <ul>
-        <li>
-            Number:&nbsp;<span><strong>{{ number }}</strong></span>
-        </li>
-        <li>
-            Title:&nbsp;<span><strong>{{ title }}</strong></span>
-        </li>
-        <li>
-            State:&nbsp;<span><strong>{{ state }}</strong></span>
-        </li>
-        <li>
-            Created time:&nbsp;<span><strong>{{ createdTime }}</strong></span>
-        </li>
-    </ul>
-    <div *ngFor="let item of requestViewers">
+
+    <mat-list>
+        <mat-list-item>Number:&nbsp;<strong>{{ number }}</strong></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Title:&nbsp;<strong>{{ title }}</strong></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>State:&nbsp;<strong>{{ state }}</strong></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Created at:&nbsp;<strong>{{ created_at }}</strong></mat-list-item>
+    </mat-list>
+    
+    <div *ngFor="let item of requested_reviewers">
         <mat-card class="card-container">
             <mat-card-header>
                 <img mat-card-avatar src="{{item.avatar_url}}" alt="{{item.avatar_url}}" />

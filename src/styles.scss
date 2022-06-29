@@ -10,10 +10,6 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-table {
-    width: 100%;
-}
-
 .container {
     padding-left: 5%;
     padding-right: 5%;
@@ -25,10 +21,6 @@ table {
     padding: 10px;
 }
 
-.float-right {
-    float: right;
-}
-
 .spinner-container {
     display: flex;
     justify-content: center;
@@ -37,46 +29,10 @@ table {
     box-shadow: 0 5px 5px -3px;
 }
 
-.navbar {
-    justify-content: space-between;
-    position: relative;
+table {
+    width: 100%;
 }
 
-.mat-list-base.inline-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-container {
-    width: 300px;
-    margin: 5px;
-    display: flex auto;
-    justify-content: space-between;
-}
-
-.mat-column-title {
-    min-width: 700px !important;
-}
-
-.mat-column-state {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.mat-column-action {
-    display: flex;
-    justify-content: flex-end;
-}
-
-li {
-    margin-bottom: 2px;
-    line-height: 2rem;
-}
-
-li:nth-child(odd) {
-    background-color: white;
-}
-
-li:nth-child(even) {
-    background-color: whitesmoke;
+.float-right {
+    float: right;
 }
